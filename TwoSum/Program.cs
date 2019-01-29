@@ -18,8 +18,7 @@ namespace LeetCode
 
             Console.ReadLine();
         }
-
-        //public static int[] TwoSum(int[] nums, int target)
+        //public static int[] TwoSum(int[] nums, int target) (Leetcode solution)
         public static void TwoSum(int[] nums, int target)
         {
             int[] answer = new int[2];
@@ -34,7 +33,7 @@ namespace LeetCode
                     }
                 }
             }
-            //return answer;
+            //return answer; (Leetcode solution)
             //just to show which indices were selected
             Console.WriteLine(answer[0] + "\n" + answer[1]);
         }
