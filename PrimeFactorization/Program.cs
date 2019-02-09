@@ -18,7 +18,6 @@ namespace factoring
                 while(userNum == 1)
                 {
                     Console.WriteLine("Enter a number to be factored. Press 0 to exit...");
-                    //TODO: error handling for weird input or oversized numbers
                     //considering creating a method for user input with additional code implementing TryParse
                     try {
                         userNum = Convert.ToInt32(Console.ReadLine()); }
