@@ -24,4 +24,5 @@ For the purpose of this problem, assume that your function returns 0 when the re
 ### Challenges
 - The example *Input: -123 Output -321* threw me off the most. At first, my output would look something like *321-*, and I needed a way
 to keep the negative sign in front. To do this I checked for the '-' symbol and moved it appropriately. 
-- Doing this without converting to a string is still something I am trying to figure out.
+- ~~Doing this without converting to a string is still something I am trying to figure out.~~
+- No longer an issue thanks to what I learned from working on a ProjectEuler solution.
