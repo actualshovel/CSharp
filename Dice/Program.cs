@@ -1,7 +1,3 @@
-﻿/*roll two 6 sided die
- * display the results and the number they add up to
- * option given to roll again*/
-
 using System;
 namespace Jan
 {
