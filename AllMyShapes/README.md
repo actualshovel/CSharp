@@ -11,4 +11,4 @@ Create an abstract class called Shape and then inherit from it other shapes like
 I tried a few different ways to handle exceptions here, but for learning purposes I decided on TryParse() for all input. I can do that because this program only works with one data type: double. Because of this, I was able to make one method, getNumbersFromString(), and reuse it anywhere there is a Console.ReadLine(). I am happy with the way this particular method turned out and plan to utilize this code in future projects. 
 
 #### Output
-[picture]http://puu.sh/CMUut/5642593f26.png
+![picture](http://puu.sh/CMUut/5642593f26.png)
