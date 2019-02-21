@@ -1,7 +1,0 @@
-C:\Users\shovelware\source\repos\PracticeProjects\UnitConverter\UnitConverter\bin\Debug\UnitConverter.exe.config
-C:\Users\shovelware\source\repos\PracticeProjects\UnitConverter\UnitConverter\bin\Debug\UnitConverter.exe
-C:\Users\shovelware\source\repos\PracticeProjects\UnitConverter\UnitConverter\bin\Debug\UnitConverter.pdb
-C:\Users\shovelware\source\repos\PracticeProjects\UnitConverter\UnitConverter\obj\Debug\UnitConverter.csprojAssemblyReference.cache
-C:\Users\shovelware\source\repos\PracticeProjects\UnitConverter\UnitConverter\obj\Debug\UnitConverter.csproj.CoreCompileInputs.cache
-C:\Users\shovelware\source\repos\PracticeProjects\UnitConverter\UnitConverter\obj\Debug\UnitConverter.exe
-C:\Users\shovelware\source\repos\PracticeProjects\UnitConverter\UnitConverter\obj\Debug\UnitConverter.pdb
