@@ -11,8 +11,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 //TODO: create conversion class
-//TODO: get a full, working temperature conversion
-//user will enter a falue in ferenheight and get celcius
 //allow this operation to happen both ways
 
 namespace UnitConverter
@@ -22,25 +20,41 @@ namespace UnitConverter
         static void Main(string[] args)
         {
             //TODO: wrap within a loop
-            string firstUnit;
+            string selectUnit = "";
+            string userValue = "";
+            string answer = "";
+
             //user enters type of unit to be converted
             Console.WriteLine("What unit are you converting from?");
             Console.WriteLine("ex: temp, currency, volume, mass");
-            firstUnit = Console.ReadLine();
+            selectUnit = Console.ReadLine();
+            
+            //20FEB2019
+            //WHAT I NEED
+            //allow user to type (ex. "68F" to represent 68 degrees fahrenheit
+            //determine if there is an F or a C
+            //convert depending on which (char? substring?) is used
+            if (selectUnit.ToLower().Equals("temp"))
+            {
+                
+                Console.WriteLine("Enter the temp followed by a 'C' for celsius or an 'F' for fahrenheit:");
+                userValue = Console.ReadLine();
+                Temperature tmp = new Temperature(userValue);
+                answer = tmp.ToFahrenheit.ToString();
 
-            //TODO: instantiate objects based on selection
-            if (firstUnit.ToLower().Equals("temp"))
-                TempConversion();
-            else if (firstUnit.ToLower().Equals("weight"))
-                WeightConversion();
-            else if (firstUnit.ToLower().Equals("currency"))
-                else
-                Console.WriteLine("incorrect entry")
+            }
+            
+            Console.WriteLine("Converted {0} to {1}!", userValue, answer);
 
-
-            //convert type
-            //then value
-
+            Console.ReadLine();
         }
+
+
+
+        //static string CheckType(string unit)
+        //{
+        //    string temp = unit.Substring(unit.Length-1);
+        //    return temp;
+        //}
     }
 }
