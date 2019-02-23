@@ -8,56 +8,48 @@ namespace UnitConverter
 {
     class Temperature
     {
-        private double celsius;
-        public double ToCelsius
-        {
-            get { return celsius; }
-            set { celsius = (((fahrenheit - 32) * 5) / 9); }
-        }
-
-        private double fahrenheit;
-        public double ToFahrenheit
-        {
-            get { return fahrenheit; }
-            set { fahrenheit = (celsius * (9/5) + 32); ; }
-        }
-
+        private double _celsius;
+        private double _fahrenheit;
 
         public Temperature() { }
-        
-        //take another look at why i was getting
-        //a format exception previously
-        public Temperature(string temp) {
-            if (CheckUnitType(temp).Equals('F'))
-                fahrenheit = double.Parse(temp);
-            if (CheckUnitType(temp) == "C")
-                celsius = double.Parse(temp);
+        public Temperature(string temp)
+        {
+            if (temp.Contains("F"))
+            {
+                temp = temp.Remove(temp.Length-1);
+                _fahrenheit = double.Parse(temp);
+            }
+            if (temp.Contains("C"))
+            {
+                temp = temp.Remove(temp.Length-1);
+                _celsius = double.Parse(temp);
+            }
+        }
+        public double Celsius
+        {
+            get { return _celsius; }
+            set { FahrenheitToCelsius(); }
+        }
+        public double Fahrenheit
+        {
+            get { return _fahrenheit; }
+            set { CelsiusToFahreheit(); }
         }
 
-        
+        //C to F (cel * (9/5) + 32);
+        //F to C (((fah - 32) * 5) / 9);
 
+        public double FahrenheitToCelsius()
+        {
+            _celsius = (_fahrenheit - 32) * (5 / 9);
+            return _celsius;
+        }
 
-
-
-
-
-
-        //public double ToFn(double cel)
-        //{
-        //    double fah = (cel * (9/5) + 32);
-        //    return fah;
-        //}
-
-        //public double ToCel()
-        //{
-        //    celsius = (((fahrenheit - 32) * 5) / 9);
-
-
-        //    //Deduct 32, then multiply by 5, then divide by 9
-        //    double cel = (((fah - 32) * 5) / 9);
-        //    return cel;
-
-        //}
+        public double CelsiusToFahreheit()
+        {
+            _fahrenheit = _celsius * (9/5) + 32;
+            return _fahrenheit;
+        }
 
 
         static string CheckUnitType(string unit)
