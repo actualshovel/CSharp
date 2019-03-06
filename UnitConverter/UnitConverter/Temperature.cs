@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UnitConverter
 {
@@ -20,14 +16,14 @@ namespace UnitConverter
         public void GetFahrenheit()
         {
             Fahrenheit = (Celsius * (9/5) + 32);
-            Console.WriteLine("{0}C is equal to {1}F", Celsius, Fahrenheit);
+            Console.WriteLine("{0:00}C is equal to {1:00}F", Celsius, Fahrenheit);
         }
 
         //formula to get celsius given fahrenheit
         public void GetCelsius()
         {
             Celsius = (Fahrenheit - 32) * 5 / 9;
-            Console.WriteLine("{0}F is equal to {1}C", Fahrenheit, Celsius);
+            Console.WriteLine("{0:00}F is equal to {1:00}C", Fahrenheit, Celsius);
         }
 
 

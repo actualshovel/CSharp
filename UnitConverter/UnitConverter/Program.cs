@@ -1,12 +1,5 @@
-﻿//Unit Converter(temp, currency, volume, mass and more) - 
-//Converts various units between one another.The user enters the type of unit being entered, 
-//the type of unit they want to convert to and then the value.The program will then make the conversion.
+﻿//Unit Converter(temp, currency, volume, mass and more) 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace UnitConverter
 {
     class Program
@@ -39,6 +32,7 @@ namespace UnitConverter
             Console.ReadLine();
         }
 
+        //a main menu for temperatures
         public static void TempMenu()
         {
             Console.WriteLine("Choose a conversion: ");
@@ -46,6 +40,7 @@ namespace UnitConverter
             Console.WriteLine("2) Celsius to Fahrenheit");
             //TODO: validate user input
             int choice = int.Parse(Console.ReadLine());
+
 
             Console.WriteLine("Enter temperature: ");
             double userTemp = double.Parse(Console.ReadLine());
@@ -65,8 +60,6 @@ namespace UnitConverter
             {
                 Console.WriteLine("Incorrect input");
             }
-            
-
         }
 
         //TODO weight conversions of all types
