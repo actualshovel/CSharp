@@ -6,58 +6,32 @@ using System.Threading.Tasks;
 
 namespace UnitConverter
 {
+    //use of this class requires instantiation.
+    //user will then enter a temperature to be converted by the appropriate method
     class Temperature
     {
-        private double _celsius;
         private double _fahrenheit;
+        public double Fahrenheit { get; set; }
 
-        public Temperature() { }
-        public Temperature(string temp)
+        private double _celsius;
+        public double Celsius { get; set; }
+
+        //formula to get fahrenheit given celsius
+        public void GetFahrenheit()
         {
-            if (temp.Contains("F"))
-            {
-                temp = temp.Remove(temp.Length-1);
-                _fahrenheit = double.Parse(temp);
-            }
-            if (temp.Contains("C"))
-            {
-                temp = temp.Remove(temp.Length-1);
-                _celsius = double.Parse(temp);
-            }
+            Fahrenheit = (Celsius * (9/5) + 32);
+            Console.WriteLine("{0}C is equal to {1}F", Celsius, Fahrenheit);
         }
-        public double Celsius
+
+        //formula to get celsius given fahrenheit
+        public void GetCelsius()
         {
-            get { return _celsius; }
-            set { FahrenheitToCelsius(); }
+            Celsius = (Fahrenheit - 32) * 5 / 9;
+            Console.WriteLine("{0}F is equal to {1}C", Fahrenheit, Celsius);
         }
-        public double Fahrenheit
-        {
-            get { return _fahrenheit; }
-            set { CelsiusToFahreheit(); }
-        }
+
 
         //C to F (cel * (9/5) + 32);
         //F to C (((fah - 32) * 5) / 9);
-
-        public double FahrenheitToCelsius()
-        {
-            _celsius = (_fahrenheit - 32) * (5 / 9);
-            return _celsius;
-        }
-
-        public double CelsiusToFahreheit()
-        {
-            _fahrenheit = _celsius * (9/5) + 32;
-            return _fahrenheit;
-        }
-
-
-        static string CheckUnitType(string unit)
-        {
-            string lastString = unit.Substring(unit.Length-1);
-            return lastString;
-
-
-        }
     }
 }
