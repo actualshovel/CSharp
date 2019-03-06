@@ -7,37 +7,72 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//TODO: create conversion class
-//allow this operation to happen both ways
-
 namespace UnitConverter
 {
     class Program
     {
+        //TODO: main program will loop
         static void Main(string[] args)
         {
-            //TODO: wrap within a loop
-            double userTemperature = 0;
-            string userChoice;
-            string answer = "";
+            //TODO: improve design of menus and output text
+            //select what kind of conversions to be made
+            Console.WriteLine("1) Temperature\n" +
+                              "2) Weight\n" +
+                              "3) Distance");
 
-            //user enters type of unit to be converted
-            Console.WriteLine("What unit are you converting from?");
-            Console.WriteLine("ex: temp, currency, volume, mass");
-            userChoice = Console.ReadLine();
-
-            if (userChoice.ToLower().Equals("temp"))
+            //user needs to only choose 1, 2, or 3
+            //so a switch statement is enough here to execute the single
+            //line of code that takes care of the desired conversion
+            int unitChoice = int.Parse(Console.ReadLine());
+            switch(unitChoice)
             {
-                
-                Console.WriteLine("Enter the temperature:");
-                answer = Console.ReadLine();
-                Temperature tmp = new Temperature(answer);
-
-                Console.WriteLine(tmp.FahrenheitToCelsius());
-                
-
+                case 1:
+                    TempMenu();
+                    break;
+                case 2:
+                    WeightMenu();
+                    break;
+                default:
+                    break;
+                //TODO: add features - distances (feet, inches, yards, etc)
             }
             Console.ReadLine();
+        }
+
+        public static void TempMenu()
+        {
+            Console.WriteLine("Choose a conversion: ");
+            Console.WriteLine("1) Fahrenheit to Celsius");
+            Console.WriteLine("2) Celsius to Fahrenheit");
+            //TODO: validate user input
+            int choice = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter temperature: ");
+            double userTemp = double.Parse(Console.ReadLine());
+
+            Temperature temp = new Temperature();
+            if (choice == 1)
+            {
+                temp.Fahrenheit = userTemp;
+                temp.GetCelsius();
+            }
+            else if (choice == 2)
+            {
+                temp.Celsius = userTemp;
+                temp.GetFahrenheit();
+            }
+            else
+            {
+                Console.WriteLine("Incorrect input");
+            }
+            
+
+        }
+
+        //TODO weight conversions of all types
+        public static void WeightMenu()
+        {
+            int userWeight;
         }
     }
 }
