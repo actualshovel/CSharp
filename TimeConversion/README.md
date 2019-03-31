@@ -12,3 +12,6 @@ I eventually figured out that I could put constraints on my code to not allow th
 - Editing the string. Another blunder in my original solution: it had many "return" statements. This looked messy and was hard to follow. I decided to build and edit one Stringbuilder object throughout the function, and return whatever became of it by the end. 
 
 Original problem from [hackerrank](https://www.hackerrank.com/challenges/time-conversion/problem) 
+
+#### My Output
+![picture](https://puu.sh/D7NSc/496c52eff6.png)
