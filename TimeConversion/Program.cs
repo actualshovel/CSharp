@@ -10,6 +10,7 @@ namespace HackerRank
     {
         static void Main(string[] args)
         {
+            // given the rules of the problem, the string is guaranteed to be in the following format
             string testCase = "07:05:45PM";
             string testCase2 = "01:15:00AM";
             string testCase3 = "11:59:10PM";
@@ -37,13 +38,14 @@ namespace HackerRank
             // remove AM or PM, that won't be needed regardless of conversion outcome
             sb.Remove(s.Length - 2, 2);
 
-            // if its PM, add 12. replace first 2 chars with sum of hours + 12
-            // i use .ElementAt and not .Contains("PM") so i can go directly to the index i need,
-            // instead of searching the whole array until it finds "PM"
+            // check if the string has "PM" at the expected index
             if(s.ElementAt(s.Length-2) == 'P')
             {
                 sb.Remove(0, 2);
+                
+                // switching from a 12 to 24 hour clock means I can add 12 to the time for a proper conversion
                 hours += 12;
+                // add constraints. cannot go over 23
                 if (hours > 23)
                 {
                     hours = 12;
